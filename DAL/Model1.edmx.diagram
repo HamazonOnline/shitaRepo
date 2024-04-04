@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e44f1254996e4982a6ec40a1a8ad56ff" Name="Diagram1">
+        <EntityTypeShape EntityType="shitaModel.columns" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="shitaModel.locations" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="shitaModel.product_locations" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="shitaModel.rows" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="shitaModel.scale_log" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="shitaModel.users" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="shitaModel.products" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="shitaModel.lines" Width="1.5" PointX="2.625" PointY="4.25" />
+        <EntityTypeShape EntityType="shitaModel.carts" Width="1.5" PointX="3.375" PointY="9.75" />
+        <EntityTypeShape EntityType="shitaModel.product_price" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="shitaModel.product_transactions" Width="1.5" PointX="9.375" PointY="4.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

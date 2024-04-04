@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shitaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="shitaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="columns" EntityType="shitaModel.columns" />
+    <EntitySet Name="locations" EntityType="shitaModel.locations" />
+    <EntitySet Name="product_locations" EntityType="shitaModel.product_locations" />
+    <EntitySet Name="rows" EntityType="shitaModel.rows" />
+    <EntitySet Name="scale_log" EntityType="shitaModel.scale_log" />
+    <EntitySet Name="users" EntityType="shitaModel.users" />
+    <EntitySet Name="products" EntityType="shitaModel.products" />
+    <EntitySet Name="lines" EntityType="shitaModel.lines" />
+    <EntitySet Name="carts" EntityType="shitaModel.carts" />
+    <EntitySet Name="product_price" EntityType="shitaModel.product_price" />
+    <EntitySet Name="product_transactions" EntityType="shitaModel.product_transactions" />
+  </EntityContainer>
+  <EntityType Name="columns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="column_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="disabled" Type="Int32" />
+    <Property Name="foreign_id" Type="Int32" />
+    <Property Name="locked" Type="Int32" />
+    <Property Name="open_until" Type="DateTime" />
+    <Property Name="cart_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="locations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="foreign_id" Type="Int32" />
+  </EntityType>
+  <EntityType Name="product_locations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="column_id" Type="Int32" />
+    <Property Name="row_id" Type="Int32" />
+    <Property Name="line_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="product_max_quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="rows">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="column_id" Type="Int32" />
+    <Property Name="row_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="foreign_id" Type="Int32" />
+    <Property Name="lines" Type="Int32" />
+    <Property Name="last_product_taken" Type="DateTime" />
+    <Property Name="width_cm" Type="Decimal" />
+  </EntityType>
+  <EntityType Name="scale_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="row_foreign_id" Type="Int32" />
+    <Property Name="total" Type="Decimal" />
+    <Property Name="totalRight" Type="Decimal" />
+    <Property Name="totalLeft" Type="Decimal" />
+    <Property Name="timestamp" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="is_product_taken" Type="Int32" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fullname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="65" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" />
+    <Property Name="weight" Type="Decimal" />
+    <Property Name="insertDate" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="barcode" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="lines">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="line_name" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="row_id" Type="Int32" />
+    <Property Name="insert_date" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="center_cm" Type="Decimal" />
+  </EntityType>
+  <EntityType Name="carts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="timestamp" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="product_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="location_id" Type="Int32" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="price" Type="Double" />
+    <Property Name="insert_date" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="product_transactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="product_id" Type="Int32" />
+    <Property Name="cart_id" Type="Int32" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="insert_date" Type="DateTime" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="Double" />
+    <Property Name="line_id" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="shitaProject.Windows.AutoCloseMessageBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shitaProject.Windows"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+      Title="אישור" Height="300" Width="700" Loaded="Window_Loaded"
+        
+        Topmost="True" WindowStartupLocation="CenterScreen" FlowDirection="RightToLeft">
+    <Border BorderThickness="5" BorderBrush="Gray">
+        <Grid>
+            <Grid VerticalAlignment="Center" HorizontalAlignment="Left">
+                <Ellipse x:Name="ColorElps" Height="90" Width="90" Fill="Green"/>
+                <Ellipse Height="86" Width="86" Fill="Transparent" Stroke="White" StrokeThickness="4"  />
+                <materialDesign:PackIcon Kind="Check" Name="iconPckIcn" Width="60" Foreground="White" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,20,0,0" HorizontalAlignment="Center">
+                <Label FontSize="20" FontWeight="Bold" Width="auto" Height="auto"  Name="myMessage" HorizontalContentAlignment="Left" VerticalContentAlignment="Center">
+                </Label>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

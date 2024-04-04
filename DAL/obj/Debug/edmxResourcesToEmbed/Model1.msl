@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="shitaModelStoreContainer" CdmEntityContainer="shitaEntities">
+    <EntitySetMapping Name="columns">
+      <EntityTypeMapping TypeName="shitaModel.columns">
+        <MappingFragment StoreEntitySet="columns">
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="open_until" ColumnName="open_until" />
+          <ScalarProperty Name="locked" ColumnName="locked" />
+          <ScalarProperty Name="foreign_id" ColumnName="foreign_id" />
+          <ScalarProperty Name="disabled" ColumnName="disabled" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="column_name" ColumnName="column_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="locations">
+      <EntityTypeMapping TypeName="shitaModel.locations">
+        <MappingFragment StoreEntitySet="locations">
+          <ScalarProperty Name="foreign_id" ColumnName="foreign_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_locations">
+      <EntityTypeMapping TypeName="shitaModel.product_locations">
+        <MappingFragment StoreEntitySet="product_locations">
+          <ScalarProperty Name="product_max_quantity" ColumnName="product_max_quantity" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="row_id" ColumnName="row_id" />
+          <ScalarProperty Name="column_id" ColumnName="column_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rows">
+      <EntityTypeMapping TypeName="shitaModel.rows">
+        <MappingFragment StoreEntitySet="rows">
+          <ScalarProperty Name="width_cm" ColumnName="width_cm" />
+          <ScalarProperty Name="last_product_taken" ColumnName="last_product_taken" />
+          <ScalarProperty Name="lines" ColumnName="lines" />
+          <ScalarProperty Name="foreign_id" ColumnName="foreign_id" />
+          <ScalarProperty Name="row_name" ColumnName="row_name" />
+          <ScalarProperty Name="column_id" ColumnName="column_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="scale_log">
+      <EntityTypeMapping TypeName="shitaModel.scale_log">
+        <MappingFragment StoreEntitySet="scale_log">
+          <ScalarProperty Name="is_product_taken" ColumnName="is_product_taken" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="totalLeft" ColumnName="totalLeft" />
+          <ScalarProperty Name="totalRight" ColumnName="totalRight" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="row_foreign_id" ColumnName="row_foreign_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="shitaModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="shitaModel.products">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="insertDate" ColumnName="insertDate" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lines">
+      <EntityTypeMapping TypeName="shitaModel.lines">
+        <MappingFragment StoreEntitySet="lines">
+          <ScalarProperty Name="center_cm" ColumnName="center_cm" />
+          <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+          <ScalarProperty Name="row_id" ColumnName="row_id" />
+          <ScalarProperty Name="line_name" ColumnName="line_name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carts">
+      <EntityTypeMapping TypeName="shitaModel.carts">
+        <MappingFragment StoreEntitySet="carts">
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_price">
+      <EntityTypeMapping TypeName="shitaModel.product_price">
+        <MappingFragment StoreEntitySet="product_price">
+          <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="location_id" ColumnName="location_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="product_transactions">
+      <EntityTypeMapping TypeName="shitaModel.product_transactions">
+        <MappingFragment StoreEntitySet="product_transactions">
+          <ScalarProperty Name="line_id" ColumnName="line_id" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="insert_date" ColumnName="insert_date" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="cart_id" ColumnName="cart_id" />
+          <ScalarProperty Name="product_id" ColumnName="product_id" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,71 @@
+﻿<Window x:Class="shitaProject.Windows.SetLineDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:shitaProject.Windows"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStyle="SingleBorderWindow"
+        Title="SetLineDetailsWindow" Height="600" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="0">
+            <Label Name="CurrentProductNaneLbl" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Content="testing"/>
+            <Label Name="PositionLbl"  HorizontalAlignment="Center" FontWeight="Bold" FontSize="20" Margin="0,0,0,0"/>
+        </StackPanel>
+
+        <StackPanel FlowDirection="RightToLeft" Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Label Content="ברקוד" PreviewTextInput = "IsDigitOnly"/>
+            <TextBox x:Name="BarcodeTb" Width="150"  Height="35"/>
+            <Label Content=  "שם מוצר" />
+            <TextBox x:Name="ProductNameTb" Width="150" Height="35"/>
+            <Button Width="60" Background="Green" Click="SearchProducts_Click" Margin="10,0,0,0">
+                <materialDesign:PackIcon Kind="Filter" Width="20"/>
+            </Button>
+            <Button Width="60" Background="Red" Click="Clear_Click"  Margin="10,0,0,0">
+                <materialDesign:PackIcon Kind="CancelThick" Width="20"/>
+            </Button>
+        </StackPanel>
+        <DataGrid Name="ProductsDG"  AutoGenerateColumns="False" VerticalAlignment="Top" 
+            RowHeight="40" ColumnHeaderHeight="50" 
+            Height="Auto" MaxHeight="1200" ScrollViewer.HorizontalScrollBarVisibility="Auto" FontSize="16" HorizontalAlignment="Center" CanUserAddRows="false" 
+            Background="Transparent" Grid.Row="2">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="FontWeight" Value="Bold"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.Columns>
+                <!--<DataGridTemplateColumn Width="55">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button ToolTip="עריכת מוצר" Click="EditProduct_Click" Width="50">
+                                <materialDesign:PackIcon Kind="Edit" Foreground="White" Width="25" Height="25" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>-->
+                <!--<DataGridTextColumn Header="" Binding="{Binding Index}" Width="40"  IsReadOnly="True" CellStyle="{StaticResource DataGridCellStyle}"/>-->
+                <DataGridTextColumn Header="ברקוד " Binding="{Binding Barcode}" Width="120"  IsReadOnly="True"/>
+                <DataGridTextColumn Header="שם מוצר" Binding="{Binding Name}"  Width="250" IsReadOnly="True">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Center" FlowDirection="RightToLeft">
+            <Button Content="שמור"  Click="Save_Click"/>
+            <!--<Button Content="מחיקת מוצר" Click="earse_Click" Margin="10,0,0,0"/>-->
+        </StackPanel>
+
+    </Grid>
+</Window>

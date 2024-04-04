@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="shitaModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.7" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" />
+    <Property Name="location_id" Type="int" />
+    <Property Name="timestamp" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="columns">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="column_name" Type="varchar" MaxLength="45" />
+    <Property Name="location_id" Type="int" />
+    <Property Name="disabled" Type="int" />
+    <Property Name="foreign_id" Type="int" />
+    <Property Name="locked" Type="int" />
+    <Property Name="open_until" Type="datetime" Precision="0" />
+    <Property Name="cart_id" Type="int" />
+  </EntityType>
+  <EntityType Name="lines">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="line_name" Type="varchar" MaxLength="45" />
+    <Property Name="row_id" Type="int" />
+    <Property Name="insert_date" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="center_cm" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="locations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="45" />
+    <Property Name="foreign_id" Type="int" />
+  </EntityType>
+  <EntityType Name="product_locations">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location_id" Type="int" />
+    <Property Name="column_id" Type="int" />
+    <Property Name="row_id" Type="int" />
+    <Property Name="line_id" Type="int" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="product_max_quantity" Type="int" />
+  </EntityType>
+  <EntityType Name="product_price">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="location_id" Type="int" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="price" Type="double" />
+    <Property Name="insert_date" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="product_transactions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" />
+    <Property Name="cart_id" Type="int" />
+    <Property Name="quantity" Type="int" />
+    <Property Name="insert_date" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="price" Type="double" />
+    <Property Name="line_id" Type="int" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="100" />
+    <Property Name="price" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="weight" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="insertDate" Type="timestamp" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="barcode" Type="varchar" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="rows">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="column_id" Type="int" />
+    <Property Name="row_name" Type="varchar" MaxLength="45" />
+    <Property Name="foreign_id" Type="int" />
+    <Property Name="lines" Type="int" />
+    <Property Name="last_product_taken" Type="timestamp" Precision="0" />
+    <Property Name="width_cm" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="scale_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="location_id" Type="int" />
+    <Property Name="row_foreign_id" Type="int" />
+    <Property Name="total" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="totalRight" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="totalLeft" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="timestamp" Type="datetime" Precision="0" StoreGeneratedPattern="Identity" />
+    <Property Name="is_product_taken" Type="int" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="varchar" MaxLength="45" />
+    <Property Name="username" Type="varchar" MaxLength="45" />
+    <Property Name="password" Type="varchar" MaxLength="45" />
+    <Property Name="email" Type="varchar" MaxLength="65" />
+  </EntityType>
+  <EntityContainer Name="shitaModelStoreContainer">
+    <EntitySet Name="carts" EntityType="Self.carts" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="columns" EntityType="Self.columns" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="lines" EntityType="Self.lines" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="locations" EntityType="Self.locations" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="product_locations" EntityType="Self.product_locations" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="product_price" EntityType="Self.product_price" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="product_transactions" EntityType="Self.product_transactions" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="rows" EntityType="Self.rows" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="scale_log" EntityType="Self.scale_log" Schema="shita" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="shita" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

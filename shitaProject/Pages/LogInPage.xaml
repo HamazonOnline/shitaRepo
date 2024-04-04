@@ -1,0 +1,76 @@
+﻿<Page x:Class="shitaProject.Pages.LogInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:shitaProject.Pages"
+      mc:Ignorable="d" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="LogInPage">
+    <Page.Resources>
+        
+       
+    </Page.Resources>
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Label Height="50" Content= "הכנס שם משתמש, סיסמה ותחנה" FontSize="30" FontWeight="Bold" Foreground="Black" HorizontalContentAlignment="Center"/>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,50,0,0" HorizontalAlignment="Center">
+                
+                <Label Height="56" Width="56" BorderBrush="White" BorderThickness="2">
+                    <Label.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Label.Resources>
+                    <materialDesign:PackIcon Kind="User" Height="50" Width="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Label>
+                <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Width="350" Height="56" 
+                         Margin="20,0,0,0" Name="UserNameTB" TextChanged="UserNameTB_TextChanged"/>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,40,0,0" HorizontalAlignment="Center">
+                <Label Height="56" Width="56" BorderBrush="White" BorderThickness="2">
+                    <Label.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Label.Resources>
+                    <materialDesign:PackIcon Kind="Password" Height="40" Width="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Label>
+                <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Width="350" Height="56" 
+              Margin="20,0,0,0" Name="PasswordTB" TextChanged="UserNameTB_TextChanged"/>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,40,0,0" HorizontalAlignment="Center">
+                <Label Height="56" Width="56" BorderBrush="White" BorderThickness="2">
+                    <Label.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Label.Resources>
+                    <materialDesign:PackIcon Kind="Location" Height="40" Width="40" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Label>
+                <ComboBox Style="{StaticResource theComboBox}" FontFamily="Calibri"  FontSize="25" Width="350" Height="56" SelectionChanged="LocationCb_SelectionChanged" Background="Red"
+                         Name="LocationCb" HorizontalContentAlignment="Center" DisplayMemberPath="Name" SelectedValuePath="Id" Margin="20,0,0,0">
+                    <ComboBox.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </ComboBox.Resources>
+                </ComboBox>
+            </StackPanel>
+     
+            <TextBlock>           
+    <!--<Hyperlink Click="ForgetPassword_Click">
+        שכחתי סיסמא?
+    </Hyperlink>-->
+            </TextBlock>
+            <Button Content="כניסה" Background="Black" Foreground="White" Click="Login" Margin="0,40,0,0"/>
+            <Label Name="errorLbl" Foreground="Red"  HorizontalAlignment="Center" FlowDirection="RightToLeft" FontWeight="Bold" Margin="0,10,0,0" FontSize="25"/>
+        </StackPanel>
+    </Grid>
+</Page>
+
