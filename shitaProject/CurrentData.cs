@@ -32,5 +32,9 @@ namespace shitaProject
             currentUser = null;
             currentLocation = null;
         }
+
+        public enum UnitNames {
+           קג, גרם, ליטר, מל, יחידה, מטר
+        }
     }
 }

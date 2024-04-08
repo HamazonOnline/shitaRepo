@@ -28,7 +28,6 @@
                 <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Width="350" Height="56" 
                          Margin="20,0,0,0" Name="UserNameTB" TextChanged="UserNameTB_TextChanged"/>
 
-
             </StackPanel>
             <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,40,0,0" HorizontalAlignment="Center">
                 <Label Height="56" Width="56" BorderBrush="White" BorderThickness="2">
@@ -41,7 +40,6 @@
                 </Label>
                 <TextBox materialDesign:TextFieldAssist.UnderlineBrush="Transparent" Width="350" Height="56" 
               Margin="20,0,0,0" Name="PasswordTB" TextChanged="UserNameTB_TextChanged"/>
-
 
             </StackPanel>
             <StackPanel Orientation="Horizontal" FlowDirection="RightToLeft"  Margin="0,40,0,0" HorizontalAlignment="Center">

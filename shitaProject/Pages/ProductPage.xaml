@@ -16,12 +16,10 @@
                 <ColumnDefinition Width="30"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-
+                <StackPanel Grid.Column="0">
                 <Label Content="ברקוד" HorizontalAlignment="Right" Height="45"/>
-
                 <Label Content="תאור מוצר" Margin="0,50,0,0" HorizontalAlignment="Right" Height="45"/>
-                <Label Content="כמות" Margin="0,20,0,0" HorizontalAlignment="Right" Height="45"/>
+                <Label Content="תכולה" Margin="0,20,0,0" HorizontalAlignment="Right" Height="45"/>
                 <Label Content="מותג" Margin="0,20,0,0" HorizontalAlignment="Right" Height="45"/>
                 <Label Content="ספק" Margin="0,20,0,0" HorizontalAlignment="Right" Height="45"/>
                 <Label Content="משקל ברוטו" Margin="0,20,0,0" HorizontalAlignment="Right" Height="45"/>
@@ -29,19 +27,22 @@
             <StackPanel Grid.Column="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <TextBox Width="200" HorizontalAlignment="Left"/>
-                    <Button Margin="20,0,0,0" Width="60">
+                    <Button Margin="20,0,0,0" Width="60" Click="SearchProduct_Click">
                         <materialDesign:PackIcon Kind="Search" Height="35" Width="35"  Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Button>
                 </StackPanel>
 
                 <TextBox Width="300" HorizontalAlignment="Left" Margin="0,50,0,0" Height="45"/>
-                <TextBox Width="300" HorizontalAlignment="Left" Margin="0,20,0,0" Height="45"/>
-                <TextBox Width="300" HorizontalAlignment="Left" Margin="0,20,0,0" Height="45"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,20,0,0" >
+                        <TextBox Width="140" HorizontalAlignment="Left" Height="45" VerticalAlignment="Center"/>
+                        <ComboBox Name="unitCB" Style="{StaticResource theComboBox}" Width="140" Height="45" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
+                    </StackPanel>
+                    <TextBox Width="300" HorizontalAlignment="Left" Margin="0,20,0,0" Height="45"/>
                 <TextBox Width="300" HorizontalAlignment="Left" Margin="0,20,0,0" Height="45"/>
                 <TextBox Width="300" HorizontalAlignment="Left" Margin="0,20,0,0" Height="45"/>
             </StackPanel>
         </Grid>
-        <Button Content="אישור"  Margin="0,50,0,0"/>
+        <Button Content="אישור"  Margin="0,50,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Page>

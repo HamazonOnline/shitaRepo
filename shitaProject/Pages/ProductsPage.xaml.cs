@@ -59,7 +59,6 @@ namespace shitaProject.Pages
                     return;
                 }
                 p.Price = result;
-
                 ProductService.instance.UpdateProductPrice(p.Id, p.Price);
             }
         }

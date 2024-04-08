@@ -23,6 +23,12 @@ namespace shitaProject.Pages
         public ProductPage()
         {
             InitializeComponent();
+            unitCB.ItemsSource = Enum.GetValues(typeof(CurrentData.UnitNames));
+        }
+
+        private void SearchProduct_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
