@@ -68,7 +68,7 @@ namespace shitaProject.Pages
             //טבלה מכילה את רשימת המוצרים שיש להם מיקומים. לכל אחד מחיר- ניתן לעריכה ושינוי
             //מצב מלאי
             //הצגת משקל ברוטו. לא ניתן לעריכה
-            ((MainWindow)Application.Current.MainWindow).PagesFrame.Content = new ProductsPage(sender as ProductDTO);
+            ((MainWindow)Application.Current.MainWindow).PagesFrame.Content = new ProductPage(sender as ProductDTO);
         }
 
         private void Filter_Click(object sender, RoutedEventArgs e)

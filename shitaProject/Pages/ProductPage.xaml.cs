@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,7 +21,17 @@ namespace shitaProject.Pages
     /// </summary>
     public partial class ProductPage : Page
     {
+        public ProductPage(ProductDTO p)
+        {
+            Initialize();
+        }
+
         public ProductPage()
+        {
+            Initialize();
+        }
+
+        public void Initialize()
         {
             InitializeComponent();
             unitCB.ItemsSource = Enum.GetValues(typeof(CurrentData.UnitNames));

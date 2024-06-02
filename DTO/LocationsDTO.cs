@@ -25,6 +25,12 @@ namespace DTO
         public int LocationName { get; set; }
     }
 
+    public class ColumnRealTimeDTO : ColumnDTO
+    {
+        public int Locked { get; set; }
+
+    }
+
     public class RowDTO
     {
         public int Id { get; set; }

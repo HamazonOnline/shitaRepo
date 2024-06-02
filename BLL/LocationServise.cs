@@ -41,6 +41,20 @@ namespace BLL
             }
         }
 
+        public List<SimpleDTO> GetColumnsMode(int id)
+        {
+            using (shitaEntities context = new shitaEntities())
+            {
+                var v = from c in context.columns
+                        select (new SimpleDTO()
+                        {
+                            Id = c.id,
+                            Name = c.locked.ToString()
+                        });
+                return v.ToList();
+            }
+        }
+
         public bool RemoveLine(int lineId)
         {
             using(shitaEntities context = new shitaEntities())
@@ -88,6 +102,22 @@ namespace BLL
                 var v = from c in context.columns
                         where c.location_id == locationId
                         select new ColumnDTO()
+                        {
+                            Id = c.id,
+                            Name = c.column_name,
+                            //LocationName = int.Parse(c.location_id.ToString())
+                        };
+                return v.ToList();
+            }
+        }
+
+        public List<ColumnRealTimeDTO> GetColumnsPerLocationRT(int locationId)
+        {
+            using (shitaEntities context = new shitaEntities())
+            {
+                var v = from c in context.columns
+                        where c.location_id == locationId
+                        select new ColumnRealTimeDTO()
                         {
                             Id = c.id,
                             Name = c.column_name,

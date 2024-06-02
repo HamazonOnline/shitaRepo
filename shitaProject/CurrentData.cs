@@ -25,7 +25,7 @@ namespace shitaProject
 
         public SimpleDTO currentLocation;
 
-        public int MaxLinesPerRow = 8;
+        public int MaxLinesPerRow = 12;
 
         public void LogOut()
         {

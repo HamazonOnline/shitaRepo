@@ -101,6 +101,8 @@
                 <MenuItem Header="הגדרת תחנה" Template="{StaticResource VsMenuTop}">
                     <MenuItem Header="הגדרת מיקומים" Template="{StaticResource VsMenuSub}" Click="GoToNavigate"/>
                 </MenuItem>
+                <MenuItem Header="תצוגת תחנה" Template="{StaticResource VsMenuTop}" Click="GoToNavigate">
+                </MenuItem>
                 <MenuItem Header="טרנסקציות" Template="{StaticResource VsMenuTop}"  Click="GoToNavigate">
                 </MenuItem>
 

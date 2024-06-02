@@ -62,7 +62,7 @@ namespace shitaProject.Pages
                 //set rowSp tag as binding to item
                 rowSp.Tag = item;
 
-
+                rowSp.FlowDirection = FlowDirection.LeftToRight;
                 int linesCounter = item.Lines.Count;
                 foreach (var item2 in item.Lines)
                 {
@@ -71,8 +71,6 @@ namespace shitaProject.Pages
                     //PopupBox popup = new PopupBox();
                     //popup.Content = "עריכת מוצר";
                     //popup.MouseDoubleClick += EditLine;
-
-
 
                     Button b = new Button();
                     //set popup to button b

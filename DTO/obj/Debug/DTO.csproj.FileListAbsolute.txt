@@ -28,3 +28,9 @@ C:\Users\User\Documents\GitHub\shitaProject\DTO\obj\Debug\DTO.csproj.AssemblyRef
 C:\Users\User\Documents\GitHub\shitaProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\GitHub\shitaProject\DTO\obj\Debug\DTO.dll
 C:\Users\User\Documents\GitHub\shitaProject\DTO\obj\Debug\DTO.pdb
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\bin\Debug\DTO.dll
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\bin\Debug\DTO.pdb
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\obj\Debug\DTO.csproj.AssemblyReference.cache
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\obj\Debug\DTO.dll
+C:\Users\User\OneDrive\מסמכים\GitHub\shitaRepo\DTO\obj\Debug\DTO.pdb

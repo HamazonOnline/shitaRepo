@@ -95,6 +95,7 @@ namespace shitaProject
                 case "רשימת פריטים": PagesFrame.Content = new ProductsPage(); break;
                 case "תצוגת מדף": PagesFrame.Content = new ColumnPage(); break;
                 case "הגדרת מיקומים": PagesFrame.Content = new ColumnsPage(); break;
+                case "תצוגת תחנה": PagesFrame.Content = new ColumsRealTimePage(); break;
                 //case "טרנסקציות": PagesFrame.Content = new TransactionPage(); break;
             }
         }
