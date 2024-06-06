@@ -82,9 +82,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ColumnView.xaml.cs">
-      <DependentUpon>ColumnView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ColumsRealTimePage.xaml.cs">
       <DependentUpon>ColumsRealTimePage.xaml</DependentUpon>
     </Compile>
@@ -97,10 +94,6 @@
     <Compile Include="Windows\SetLineDetailsWindow.xaml.cs">
       <DependentUpon>SetLineDetailsWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="ColumnView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ColumsRealTimePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

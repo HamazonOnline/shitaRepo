@@ -33,8 +33,8 @@ namespace shitaProject.Pages
             Button b;
             foreach (var item in Columns)
             {
-                ColumnView c = new ColumnView(item.Name);
-                ColumnsSp.Children.Add(c);
+               
+
                 //b = new Button();
                 //b.Content = item.Name;
                 //b.Tag = item;
