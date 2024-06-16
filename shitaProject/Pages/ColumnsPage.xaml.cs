@@ -21,6 +21,7 @@ namespace shitaProject.Pages
     /// </summary>
     public partial class ColumnsPage : Page
     {
+
         public ColumnsPage()
         {
             InitializeComponent();
@@ -33,14 +34,22 @@ namespace shitaProject.Pages
             Button b;
             foreach (var item in Columns)
             {
-               
-
-                //b = new Button();
-                //b.Content = item.Name;
-                //b.Tag = item;
-                //b.Click += GoToRowPage;
-                //ColumnsSp.Children.Add(b);
+               b = new Button();
+               b.Content = item.Name;
+               b.Tag = item;
+               b.Click += GoToRowPage;
+               ColumnsSp.Children.Add(b);
             }
+        }
+
+        private void GoToRowPage(object sender, RoutedEventArgs e)
+        {
+            ColumnDTO column = ((Button)sender).Tag as ColumnDTO;
+            //if(column == 0)
+            //{
+            //    //add new column
+            //}
+            ((MainWindow)Application.Current.MainWindow).PagesFrame.Content = new RowsPage(column);
         }
         //create door request
     }
